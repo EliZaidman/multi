@@ -11,11 +11,13 @@ public class RealTimeUpdater : MonoBehaviour,IPunObservable
         {
             stream.SendNext(GameManaging.Instance._Silver);
             stream.SendNext(GameManaging.Instance.HP);
+            stream.SendNext(GameManaging.Instance.TotalScore);
         }
         else
         {
             GameManaging.Instance._Silver = (int)stream.ReceiveNext();
             GameManaging.Instance.HP = (int)stream.ReceiveNext();
+            GameManaging.Instance.TotalScore = (int)stream.ReceiveNext();
         }
     }
 

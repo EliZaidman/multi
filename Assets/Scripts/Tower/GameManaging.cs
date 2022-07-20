@@ -15,8 +15,8 @@ public class GameManaging : MonoBehaviour
     public int HP;
     [SerializeField] int DMG;
     [SerializeField] int maxHP;
-                     int TotalScore;
     [SerializeField] int AddScore;
+    internal int TotalScore;
 
     [SerializeField] private int _TurretCost;
     public static GameManaging Instance { get; private set; }
