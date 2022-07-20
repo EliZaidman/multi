@@ -17,7 +17,7 @@ MonoBehaviour:
     AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 
+    AppVersion: 69420asdw
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -42,6 +42,7 @@ MonoBehaviour:
   - TakeDMG
   - TookDMG
   - Dead
+  - StartGame
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

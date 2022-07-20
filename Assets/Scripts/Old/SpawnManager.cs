@@ -1,15 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static SpawnManager Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     [SerializeField]
     private Transform[] spawnPoints;
-    
+
     [SerializeField]
     private GameObject enemy;
     private GameObject currentEnemy;
+
+    [SerializeField]
+    private int maxEnemies;
+    private int currentEnemies;
     //Counter
     public float counter;
 
@@ -22,29 +42,39 @@ public class SpawnManager : MonoBehaviour
     //FailSafe to ensure exacly as wanted
     public bool spawned;
 
+    public int StartGame = 0;
     private void Update()
     {
-        SpawnEnemies(enemeySpawns);
+        if (StartGame >= 3)
+        {
+            SpawnEnemies(enemeySpawns);
+        }
     }
 
     private void SpawnEnemies(int amount)
     {
         counter = counter + Time.deltaTime;
+        if (currentEnemies >= maxEnemies)
+        {
+            return;
+        }
+
         if (counter > delay && spawned)
         {
             for (int i = 0; i < amount; i++)
             {
                 for (int j = 0; j < spawnPoints.Length; j++)
                 {
-                    Instantiate(enemy, spawnPoints[j].transform.position, spawnPoints[j].transform.rotation);
-
+                    currentEnemy = PhotonNetwork.Instantiate("enemy", spawnPoints[j].transform.position, spawnPoints[j].transform.rotation);
+                    currentEnemy.GetComponent<AI>().rightDes = j;
+                    currentEnemies++;
                     if (j > 2)
                         j = 0;
 
                     print($"{i}, {j}");
                 }
             }
-            
+
             spawned = false;
             counter = 0;
         }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System.Linq;
+
 public enum FireRate { Fast = 1, Normal = 2, Slow = 3 }
 
 public class TurretBehavior : MonoBehaviour
@@ -49,24 +51,29 @@ public class TurretBehavior : MonoBehaviour
                 print($"New Target Set {_target.name} )");
             }
         }
+        if (_target == null)
+        {
+            _enemiesInRange.RemoveAt(0);
+        }
     }
     //
 
     private void OnTriggerEnter(Collider other)
-    {
+    {     
         // locking on target
-        if (other.tag == _enemyTag)
-        {
-            Debug.Log($"ALERT: new enemy at {gameObject.name} attacking range");
-            _enemiesInRange.Add(other.gameObject.transform);
-
+            if (other.tag == _enemyTag)
+                
+            {
+                Debug.Log($"ALERT: new enemy at {gameObject.name} attacking range");
+                _enemiesInRange.Add(other.gameObject.transform);
+            }
             //_photonView.RPC("SwitchToTargetLockedRPC", RpcTarget.All);
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         // returning to idle
+        
         if (other.tag == _enemyTag)
         {
             Debug.Log($"ALERT: an enemy was removed from {gameObject.name} attacking range");

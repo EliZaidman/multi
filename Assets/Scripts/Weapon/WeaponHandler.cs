@@ -39,7 +39,7 @@ public class WeaponHandler : NetworkBehaviour
         if (GetInput(out NetworkInputData networkInputData))
         {
             if (networkInputData.isFireButtonPressed)
-                Fire(networkInputData.aimForwardVector);
+              Fire(networkInputData.aimForwardVector);
         }
     }
 
@@ -66,7 +66,8 @@ public class WeaponHandler : NetworkBehaviour
             if (Object.HasStateAuthority)
                 hitinfo.Hitbox.transform.root.GetComponent<HPHandler>().OnTakeDamage(networkPlayer.nickName.ToString());
 
-            isHitOtherPlayer = true;
+            //isHitOtherPlayer = true;
+            isHitOtherPlayer = false;
 
         }
         else if (hitinfo.Collider != null)

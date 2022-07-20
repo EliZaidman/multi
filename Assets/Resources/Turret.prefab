@@ -364,8 +364,8 @@ MonoBehaviour:
   _projectilePosLeft: {fileID: 4917296743391146500}
   _projectilePosRight: {fileID: 442124555141183034}
   _fireRate: 1
-  _projectileForwardForce: 30000
-  _fireRateModifier: 1.75
+  _projectileForwardForce: 300000
+  _fireRateModifier: 1.5
 --- !u!114 &1958996709077102475
 MonoBehaviour:
   m_ObjectHideFlags: 0

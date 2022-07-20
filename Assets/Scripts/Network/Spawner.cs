@@ -8,6 +8,7 @@ using System;
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     public NetworkPlayer playerPrefab;
+    private int spawnCounter = 0;
 
     //Other compoents
     CharacterInputHandler characterInputHandler;
@@ -20,10 +21,30 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+        Vector3 spawnPoint = Vector3.zero;
         if (runner.IsServer)
         {
             Debug.Log("OnPlayerJoined we are server. Spawning player");
-            runner.Spawn(playerPrefab, Utils.GetRandomSpawnPoint(), Quaternion.identity, player);
+            switch (spawnCounter)
+            {
+                case 0:
+                    spawnPoint = new Vector3(-75f, 0.277099609f, 28.3799992f);
+                    break;
+
+                case 1:
+                    spawnPoint = new Vector3(-52.2049866f, 0.109375f, 28.1586266f);
+                    break;
+
+                case 2:
+                    spawnPoint = new Vector3(-63.4041901f, 0.109375f, 47.3294487f);
+                    break;
+
+                default:
+                    spawnPoint = Utils.GetRandomSpawnPoint();
+                    break;
+            }
+            runner.Spawn(playerPrefab, spawnPoint, Quaternion.identity, player);
+            spawnCounter++;
         }
         else Debug.Log("OnPlayerJoined");
     }

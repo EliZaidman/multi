@@ -4,17 +4,35 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
-   
-    private GameObject _target;
+
+    public GameObject _target0;
+    public GameObject _target1;
+    public GameObject _target2;
     private NavMeshAgent _agent;
+    public int rightDes;
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _target = GameObject.Find("Tower2");
+        _target0 = GameObject.Find("Target 0");
+        _target1 = GameObject.Find("Target 1");
+        _target2 = GameObject.Find("Target 2");
     }
     private void Update()
     {
-        _agent.destination = _target.transform.position;
+        if (rightDes == 0)
+        {
+            _agent.destination = _target0.transform.position;
+        }
+
+        if (rightDes == 1)
+        {
+            _agent.destination = _target1.transform.position;
+        }
+
+        if (rightDes == 2)
+        {
+            _agent.destination = _target2.transform.position;
+        }
     }
 }

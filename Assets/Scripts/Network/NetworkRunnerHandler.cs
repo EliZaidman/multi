@@ -43,7 +43,7 @@ public class NetworkRunnerHandler : MonoBehaviour
             GameMode = gameMode,
             Address = address,
             Scene = scene,
-            SessionName = "TestRoom",
+            SessionName = "EliZ41241612351257812&@%!@#",
             Initialized = initialized,
             SceneManager = sceneManager
         });

@@ -10,27 +10,32 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] int HP;
     [SerializeField] int DMG;
+    private AI  ai;
     public PhotonView PhotonView { get; private set; }
 
     private void Start()
     {
         PhotonView = GetComponent<PhotonView>();
+        ai = gameObject.GetComponent<AI>();
     }
 
     private void Update()
     {
         if (HP <=0)
         {
-            this.PhotonView.RPC("Dead", RpcTarget.All);
+            this.PhotonView.RPC("Dead", RpcTarget.AllBufferedViaServer);
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
+
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == bulletTag)
         {
             this.PhotonView.RPC("TookDMG", RpcTarget.All);
             Destroy(collision.gameObject);
+            print("TookDmg");
         }
     }
 
@@ -43,7 +48,8 @@ public class Enemy : MonoBehaviour
     [PunRPC]
     private void Dead()
     {
-        BankManager.Instance._Silver += 100;
+        GameManaging.Instance._Silver += 100;
+        GameManaging.Instance.moneyGUI.text = GameManaging.Instance._Silver.ToString();
         Destroy(gameObject);
     }
 }
