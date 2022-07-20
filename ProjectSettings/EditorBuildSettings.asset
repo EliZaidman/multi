@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/World1.unity
-    guid: ab013a0c9db8ba94ebfa3202a1fe6d56
-  - enabled: 1
-    path: Assets/Scenes/Gal.unity
-    guid: 3585bfdc363626341b6bc096b8794090
+    path: Assets/Scenes/EliZ.unity
+    guid: 634aed84ab573114c9d2d8aa4c9d1ab0
   m_configObjects: {}
