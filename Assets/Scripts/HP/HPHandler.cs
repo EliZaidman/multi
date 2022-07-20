@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HPHandler : NetworkBehaviour
 {
     [Networked(OnChanged = nameof(OnHPChanged))]
-    byte HP { get; set; }
+    public byte HP { get; set; }
 
     [Networked(OnChanged = nameof(OnStateChanged))]
     public bool isDead { get; set; }
@@ -42,7 +42,6 @@ public class HPHandler : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP = startingHP;
         isDead = false;
 
         defaultMeshBodyColor = bodyMeshRenderer.material.color;
