@@ -30,7 +30,7 @@ public class SpawnTurret : MonoBehaviour
         {
             if (_canSpawn && !isActive && GameManaging.Instance._Silver >= cost)
             {
-                PhotonNetwork.Instantiate(_turret.name, transform.position - new Vector3(0, -0.5f, 0), Quaternion.identity);
+                PhotonNetwork.Instantiate(_turret.name, transform.position - new Vector3(0, 0.5f, 0), transform.rotation);
                 GameManaging.Instance.PhotonView.RPC("BuyTurret", RpcTarget.AllBufferedViaServer);
                 print("ME PUT TARTARTARTER");
                 isActive = true;
