@@ -12495,6 +12495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8599617819605736782}
     m_Modifications:
+    - target: {fileID: 2375170564283115890, guid: e0e7830e5a423c9408d9882cdfb8e5ca, type: 3}
+      propertyPath: myImage
+      value: 
+      objectReference: {fileID: 9100232657222978209}
     - target: {fileID: 3157062391392904347, guid: e0e7830e5a423c9408d9882cdfb8e5ca, type: 3}
       propertyPath: m_Color.b
       value: 0.32452828
@@ -12630,6 +12634,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8430772577916151168, guid: e0e7830e5a423c9408d9882cdfb8e5ca, type: 3}
   m_PrefabInstance: {fileID: 6168426148013764154}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9100232657222978209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3157062391392904347, guid: e0e7830e5a423c9408d9882cdfb8e5ca, type: 3}
+  m_PrefabInstance: {fileID: 6168426148013764154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6267918056989204234
 PrefabInstance:
   m_ObjectHideFlags: 0
