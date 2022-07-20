@@ -59,6 +59,11 @@ public class WeaponHandler : NetworkBehaviour
         if (hitinfo.Distance > 0)
             hitDistance = hitinfo.Distance;
 
+        //if (hitinfo.GameObject.tag == "Enemy")
+        //{
+        //
+        //}
+
         if (hitinfo.Hitbox != null)
         {
             Debug.Log($"{Time.time} {transform.name} hit hitbox {hitinfo.Hitbox.transform.root.name}");
@@ -66,8 +71,7 @@ public class WeaponHandler : NetworkBehaviour
             if (Object.HasStateAuthority)
                 hitinfo.Hitbox.transform.root.GetComponent<HPHandler>().OnTakeDamage(networkPlayer.nickName.ToString());
 
-            //isHitOtherPlayer = true;
-            isHitOtherPlayer = false;
+            isHitOtherPlayer = true;
 
         }
         else if (hitinfo.Collider != null)
