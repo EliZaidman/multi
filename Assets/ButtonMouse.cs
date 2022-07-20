@@ -2,10 +2,12 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonMouse : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Image myImage;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -13,6 +15,9 @@ public class ButtonMouse : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameManaging.Instance.PhotonView.RPC("StartGame", RpcTarget.AllBufferedViaServer);
+
+                if (myImage != null)
+                    myImage.color = Color.green;
             }
         }
     }
