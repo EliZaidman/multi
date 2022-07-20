@@ -7904,7 +7904,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1568584
+  m_Name: pb_Mesh167364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8637,10 +8637,10 @@ MonoBehaviour:
   enemy: {fileID: 4541585573449542853, guid: b43fc524c6151d8409ea1db441c2090f, type: 3}
   maxEnemies: 20
   counter: 0
-  delay: 5
-  enemeySpawns: 2
+  delay: 3
+  enemeySpawns: 1
   spawned: 0
-  StartGame: 3
+  StartGame: 0
 --- !u!4 &445746720
 Transform:
   m_ObjectHideFlags: 0
