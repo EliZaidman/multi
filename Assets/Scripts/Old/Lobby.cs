@@ -48,7 +48,7 @@ public class Lobby : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("World1");
+        PhotonNetwork.LoadLevel(2);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
