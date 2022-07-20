@@ -6,7 +6,7 @@ public class RespawnPlayer : MonoBehaviour
 {
     [SerializeField] private Transform _playerSpawn;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
             collision.gameObject.transform.position = _playerSpawn.position;
