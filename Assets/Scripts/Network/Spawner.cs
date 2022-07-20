@@ -40,7 +40,8 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
                     break;
 
                 default:
-                    spawnPoint = Utils.GetRandomSpawnPoint();
+                    print("def shit we got a spy in our midst");
+                    //spawnPoint = Utils.GetRandomSpawnPoint();
                     break;
             }
             runner.Spawn(playerPrefab, spawnPoint, Quaternion.identity, player);
