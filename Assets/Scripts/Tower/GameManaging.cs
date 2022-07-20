@@ -4,6 +4,8 @@ using UnityEngine;
 using Fusion;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class GameManaging : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class GameManaging : MonoBehaviour
 
     public TextMeshProUGUI moneyGUI;
     public TextMeshProUGUI hpGUI;
+    public GameObject panel;
 
 
     private void Awake()
@@ -47,6 +50,10 @@ public class GameManaging : MonoBehaviour
     {
         moneyGUI.text = _Silver.ToString();
         hpGUI.text = HP.ToString();
+        if (HP <= 0)
+        {
+            this.PhotonView.RPC("LoosePanel", RpcTarget.AllBufferedViaServer);
+        }
     }
 
     [PunRPC]
@@ -81,10 +88,16 @@ public class GameManaging : MonoBehaviour
     {
         SpawnManager.Instance.StartGame++;
     }
-    
 
     public void StartGameButton()
     {
         this.PhotonView.RPC("StartGame", RpcTarget.AllBufferedViaServer);
+    }
+
+
+    [PunRPC]
+    public void LoosePanel()
+    {
+        panel.SetActive(true);
     }
 }
