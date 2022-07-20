@@ -28,15 +28,15 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             switch (spawnCounter)
             {
                 case 0:
-                    spawnPoint = new Vector3(-75f, 0.277099609f, 28.3799992f);
+                    spawnPoint = new Vector3(-24f, 0.100000001f, 8f);
                     break;
 
                 case 1:
-                    spawnPoint = new Vector3(-52.2049866f, 0.109375f, 28.1586266f);
+                    spawnPoint = new Vector3(-1f, 0.100000001f, 8.5f);
                     break;
 
                 case 2:
-                    spawnPoint = new Vector3(-63.4041901f, 0.109375f, 47.3294487f);
+                    spawnPoint = new Vector3(-12f, 0.100000001f, 27f);
                     break;
 
                 default:

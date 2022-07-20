@@ -12,6 +12,7 @@ using System.Linq;
 public class NetworkRunnerHandler : MonoBehaviour
 {
     public NetworkRunner networkRunnerPrefab;
+    public string versionName;
 
     NetworkRunner networkRunner;
 
@@ -43,7 +44,7 @@ public class NetworkRunnerHandler : MonoBehaviour
             GameMode = gameMode,
             Address = address,
             Scene = scene,
-            SessionName = "EliZ41241612351257812&@%!@#",
+            SessionName = versionName,
             Initialized = initialized,
             SceneManager = sceneManager
         });
