@@ -65,7 +65,7 @@ public class SpawnManager : MonoBehaviour
             {
                 for (int j = 0; j < spawnPoints.Length; j++)
                 {
-                    currentEnemy = PhotonNetwork.Instantiate("enemy", spawnPoints[j].transform.position, spawnPoints[j].transform.rotation);
+                    currentEnemy = PhotonNetwork.Instantiate(enemy.name, spawnPoints[j].transform.position, spawnPoints[j].transform.rotation);
                     currentEnemy.GetComponent<AI>().rightDes = j;
                     currentEnemies++;
                     if (j > 2)
