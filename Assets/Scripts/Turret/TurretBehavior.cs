@@ -43,7 +43,8 @@ public class TurretBehavior : MonoBehaviour
     private void Update()
     {
         _state.Invoke();
-        if (_enemiesInRange.Count>0)
+
+        if (_enemiesInRange.Count > 0)
         {
 
             if (_target = _enemiesInRange[0])
@@ -51,23 +52,32 @@ public class TurretBehavior : MonoBehaviour
                 print($"New Target Set {_target.name} )");
             }
         }
+
         if (_target == null)
         {
             _enemiesInRange.RemoveAt(0);
         }
+
     }
-    //
 
     private void OnTriggerEnter(Collider other)
     {     
         // locking on target
-            if (other.tag == _enemyTag)
-                
-            {
-                Debug.Log($"ALERT: new enemy at {gameObject.name} attacking range");
-                _enemiesInRange.Add(other.gameObject.transform);
-            }
-            //_photonView.RPC("SwitchToTargetLockedRPC", RpcTarget.All);
+        if (other.tag == _enemyTag)
+        {
+            Debug.Log($"ALERT: new enemy at {gameObject.name} attacking range");
+            _enemiesInRange.Add(other.gameObject.transform);
+        }
+        //_photonView.RPC("SwitchToTargetLockedRPC", RpcTarget.All);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (_target == null)
+        {
+            _enemiesInRange.Sort();
+            _target = _enemiesInRange[0];
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -86,6 +96,15 @@ public class TurretBehavior : MonoBehaviour
     private void Idle()
     {
         Debug.Log("Current State: Idle");
+
+        if (_enemiesInRange.Count > 0)
+        {
+
+            if (_target = _enemiesInRange[0])
+            {
+                print($"New Target Set {_target.name} )");
+            }
+        }
 
         if (_target != null)
         {
@@ -106,8 +125,9 @@ public class TurretBehavior : MonoBehaviour
     private void TargetLocked()
     {
         Debug.Log("Current State: TargetLocked");
+
         _enemiesInRange.Sort();
-        _target = _enemiesInRange[0];
+        
 
         // check if _target != null
         if (!_target)
