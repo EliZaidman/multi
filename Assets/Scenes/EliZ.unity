@@ -15312,6 +15312,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 799951020}
     - target: {fileID: 1688988572, guid: add520243c1dfe749be0c03e4ee7f717, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 2089707675}
+    - target: {fileID: 1688988572, guid: add520243c1dfe749be0c03e4ee7f717, type: 3}
       propertyPath: moneyGUI
       value: 
       objectReference: {fileID: 1817431446}
