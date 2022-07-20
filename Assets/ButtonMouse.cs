@@ -8,7 +8,6 @@ public class ButtonMouse : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerStay(Collider other)
     {
-        Cursor.visible = true;
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -16,12 +15,14 @@ public class ButtonMouse : MonoBehaviour
                 GameManaging.Instance.PhotonView.RPC("StartGame", RpcTarget.AllBufferedViaServer);
             }
         }
-
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Cursor.visible = false;
-
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.GetComponent<Enemy>().PhotonView.RPC("KillYourself", RpcTarget.AllBufferedViaServer);
+            GameManaging.Instance.PhotonView.RPC("TakeDMG", RpcTarget.AllBufferedViaServer);
+        }
     }
 }

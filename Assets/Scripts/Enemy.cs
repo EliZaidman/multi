@@ -52,4 +52,11 @@ public class Enemy : MonoBehaviour
         GameManaging.Instance.moneyGUI.text = GameManaging.Instance._Silver.ToString();
         Destroy(gameObject);
     }
+
+    [PunRPC]
+    private void KillYourself()
+    {
+        Destroy(gameObject);
+
+    }
 }
