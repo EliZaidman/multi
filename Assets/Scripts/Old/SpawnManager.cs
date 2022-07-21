@@ -32,6 +32,7 @@ public class SpawnManager : MonoBehaviour
     public int currentEnemies;
     //Counter
     public float counter;
+    private float timesSpawned = 0;
 
     //Time Between Spawns
     public float delay;
@@ -54,11 +55,17 @@ public class SpawnManager : MonoBehaviour
     private void SpawnEnemies(float amount)
     {
         counter = counter + Time.deltaTime;
+
         if (currentEnemies >= maxEnemies)
         {
             return;
         }
-
+        if (timesSpawned >= 5)
+        {
+            maxEnemies += 2;
+            enemeySpawns++;
+            timesSpawned = 0;
+        }
         if (counter > delay && spawned)
         {
             for (int i = 0; i < amount; i++)
@@ -76,6 +83,7 @@ public class SpawnManager : MonoBehaviour
             }
             spawned = false;
             counter = 0;
+            timesSpawned++;
         }
         else
             spawned = true;
