@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 4515002220833806628, guid: 660210c5715ec1043b9a3dc7859d9402, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 938a21cc143ea8b41aab3ed32fdaadf0, type: 2}
+      objectReference: {fileID: 2100000, guid: 638a6fd7b374c1d4fafd51ee1aa39d56, type: 2}
     - target: {fileID: 5424319102795515098, guid: 660210c5715ec1043b9a3dc7859d9402, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -717,11 +717,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1187969832447031953, guid: f3dedcc534129bc4d90fee921c949e59, type: 3}
       propertyPath: m_Textures0.Array.data[61].x
-      value: -0.115022905
+      value: -0.11502291
       objectReference: {fileID: 0}
     - target: {fileID: 1187969832447031953, guid: f3dedcc534129bc4d90fee921c949e59, type: 3}
       propertyPath: m_Textures0.Array.data[63].x
-      value: 0.11577988
+      value: 0.11577986
       objectReference: {fileID: 0}
     - target: {fileID: 1187969832447031953, guid: f3dedcc534129bc4d90fee921c949e59, type: 3}
       propertyPath: m_Faces.Array.data[4].m_Uv.m_Offset.x
@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 4309792387800357019, guid: f3dedcc534129bc4d90fee921c949e59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 938a21cc143ea8b41aab3ed32fdaadf0, type: 2}
+      objectReference: {fileID: 2100000, guid: 638a6fd7b374c1d4fafd51ee1aa39d56, type: 2}
     - target: {fileID: 6109423204808776044, guid: f3dedcc534129bc4d90fee921c949e59, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1375,11 +1375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6799607909544767000, guid: 31d402254296f214899b04ab0b5c799a, type: 3}
       propertyPath: m_Textures0.Array.data[61].x
-      value: -0.115022905
+      value: -0.11502291
       objectReference: {fileID: 0}
     - target: {fileID: 6799607909544767000, guid: 31d402254296f214899b04ab0b5c799a, type: 3}
       propertyPath: m_Textures0.Array.data[63].x
-      value: 0.11577988
+      value: 0.11577986
       objectReference: {fileID: 0}
     - target: {fileID: 6799607909544767000, guid: 31d402254296f214899b04ab0b5c799a, type: 3}
       propertyPath: m_Faces.Array.data[4].m_Uv.m_Offset.x
@@ -1400,7 +1400,7 @@ PrefabInstance:
     - target: {fileID: 8287150014031417988, guid: 31d402254296f214899b04ab0b5c799a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 938a21cc143ea8b41aab3ed32fdaadf0, type: 2}
+      objectReference: {fileID: 2100000, guid: 638a6fd7b374c1d4fafd51ee1aa39d56, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d402254296f214899b04ab0b5c799a, type: 3}
 --- !u!4 &5008492283767698183 stripped
