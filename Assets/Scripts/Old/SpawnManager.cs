@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField]
     private int maxEnemies;
-    private int currentEnemies;
+    public int currentEnemies;
     //Counter
     public float counter;
 

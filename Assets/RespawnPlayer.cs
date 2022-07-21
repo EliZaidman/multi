@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class RespawnPlayer : MonoBehaviour
 {
     [SerializeField] private Transform _playerSpawn;
@@ -11,4 +11,5 @@ public class RespawnPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Player")
             collision.gameObject.transform.position = _playerSpawn.position;
     }
+
 }

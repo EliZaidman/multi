@@ -58,6 +58,6 @@ public class Enemy : MonoBehaviour
     private void KillYourself()
     {
         Destroy(gameObject);
-
+        SpawnManager.Instance.currentEnemies--;
     }
 }
