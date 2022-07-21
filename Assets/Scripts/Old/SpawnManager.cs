@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
     public float delay;
 
     //Amount
-    public int enemeySpawns;
+    public float enemeySpawns;
 
     //FailSafe to ensure exacly as wanted
     public bool spawned;
@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemies(int amount)
+    private void SpawnEnemies(float amount)
     {
         counter = counter + Time.deltaTime;
         if (currentEnemies >= maxEnemies)
@@ -74,7 +74,6 @@ public class SpawnManager : MonoBehaviour
                     print($"{i}, {j}");
                 }
             }
-
             spawned = false;
             counter = 0;
         }

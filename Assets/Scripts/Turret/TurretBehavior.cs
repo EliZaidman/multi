@@ -9,7 +9,7 @@ public enum FireRate { Fast = 1, Normal = 2, Slow = 3 }
 public class TurretBehavior : MonoBehaviour
 {
     //private PhotonView _photonView;
-    [SerializeField]private List<Transform> _enemiesInRange;
+    [SerializeField] private List<Transform> _enemiesInRange;
     private Transform _target;
     private const string _enemyTag = "Enemy";
     private bool _canShoot;
@@ -44,25 +44,20 @@ public class TurretBehavior : MonoBehaviour
     {
         _state.Invoke();
 
-        if (_enemiesInRange.Count > 0)
-        {
-
-            if (_target = _enemiesInRange[0])
-            {
-                print($"New Target Set {_target.name} )");
-            }
-        }
-
         if (_target == null)
         {
-            _enemiesInRange.RemoveAt(0);
+            if (_enemiesInRange[0] == null)
+            {
+                _enemiesInRange.RemoveAt(0);
+            }
+            _state = Idle;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
-    {     
+    {
         // locking on target
+        _enemiesInRange.Sort();
         if (other.tag == _enemyTag)
         {
             Debug.Log($"ALERT: new enemy at {gameObject.name} attacking range");
@@ -71,19 +66,10 @@ public class TurretBehavior : MonoBehaviour
         //_photonView.RPC("SwitchToTargetLockedRPC", RpcTarget.All);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (_target == null)
-        {
-            _enemiesInRange.Sort();
-            _target = _enemiesInRange[0];
-        }
-    }
-
     private void OnTriggerExit(Collider other)
     {
         // returning to idle
-        
+
         if (other.tag == _enemyTag)
         {
             Debug.Log($"ALERT: an enemy was removed from {gameObject.name} attacking range");
@@ -96,12 +82,12 @@ public class TurretBehavior : MonoBehaviour
     private void Idle()
     {
         Debug.Log("Current State: Idle");
-
+        _enemiesInRange.Sort();
         if (_enemiesInRange.Count > 0)
         {
-
-            if (_target = _enemiesInRange[0])
+            if (_enemiesInRange[0] != null)
             {
+                _target = _enemiesInRange[0];
                 print($"New Target Set {_target.name} )");
             }
         }
@@ -126,8 +112,7 @@ public class TurretBehavior : MonoBehaviour
     {
         Debug.Log("Current State: TargetLocked");
 
-        _enemiesInRange.Sort();
-        
+
 
         // check if _target != null
         if (!_target)

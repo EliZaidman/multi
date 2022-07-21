@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 5643484777461876154}
   - component: {fileID: 6625375224643372549}
   - component: {fileID: 5142106011698682021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 95
   m_IsActive: 1
 --- !u!4 &7000246005967347721
 Transform:
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 700
+  m_VersionIndex: 1549
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
