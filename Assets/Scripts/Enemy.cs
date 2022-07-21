@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     [PunRPC]
     private void Dead()
     {
-        GameManaging.Instance._Silver += 100;
+        GameManaging.Instance._Silver += 10;
         GameManaging.Instance.moneyGUI.text = GameManaging.Instance._Silver.ToString();
         GameManaging.Instance.PhotonView.RPC("ScoreRPC", RpcTarget.AllBufferedViaServer);
         Destroy(gameObject);

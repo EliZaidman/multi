@@ -16,7 +16,7 @@ public class GameManaging : MonoBehaviour
     [SerializeField] int DMG;
     [SerializeField] int maxHP;
     [SerializeField] int AddScore;
-    internal int TotalScore;
+    public int TotalScore;
 
     [SerializeField] private int _TurretCost;
     public static GameManaging Instance { get; private set; }
@@ -53,7 +53,7 @@ public class GameManaging : MonoBehaviour
     {
         moneyGUI.text = _Silver.ToString();
         hpGUI.text = HP.ToString();
-        scoreGUI.text = AddScore.ToString();
+        scoreGUI.text = TotalScore.ToString();
         if (HP <= 0)
         {
             this.PhotonView.RPC("LoosePanel", RpcTarget.AllBufferedViaServer);
