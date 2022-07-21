@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         GameManaging.Instance._Silver += 100;
         GameManaging.Instance.moneyGUI.text = GameManaging.Instance._Silver.ToString();
+        GameManaging.Instance.PhotonView.RPC("ScoreRPC", RpcTarget.AllBufferedViaServer);
         Destroy(gameObject);
     }
 

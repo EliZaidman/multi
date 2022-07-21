@@ -81,11 +81,16 @@ public class GameManaging : MonoBehaviour
     }
 
     [PunRPC]
+    private void ScoreRPC()
+    {
+        TotalScore += AddScore;
+    }
+
+    [PunRPC]
     private void TakeDMG()
     {
         HP -= DMG;
         hpGUI.text = HP.ToString();
-        TotalScore += AddScore;
     }
 
     [PunRPC]
