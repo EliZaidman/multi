@@ -46,7 +46,11 @@ public class SpawnManager : MonoBehaviour
     public int StartGame = 0;
     private void Update()
     {
-        if (StartGame >= 3)
+        if (currentEnemies >= maxEnemies)
+        {
+            return;
+        }
+        else if (StartGame >= 3)
         {
             SpawnEnemies(enemeySpawns);
         }
@@ -56,10 +60,7 @@ public class SpawnManager : MonoBehaviour
     {
         counter = counter + Time.deltaTime;
 
-        if (currentEnemies >= maxEnemies)
-        {
-            return;
-        }
+
         if (timesSpawned >= 5)
         {
             maxEnemies += 2;

@@ -8748,7 +8748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkRunnerPrefab: {fileID: 5377699274894075536, guid: 1c95fb1f6aac6a742ae3434286a807ed, type: 3}
-  versionName: 
+  versionName: Build42069NiceV12.5Pog
 --- !u!4 &431997535
 Transform:
   m_ObjectHideFlags: 0
@@ -9130,8 +9130,8 @@ MonoBehaviour:
   maxEnemies: 20
   currentEnemies: 0
   counter: 0
-  delay: 3
-  enemeySpawns: 0.3333334
+  delay: 8
+  enemeySpawns: 1
   spawned: 0
   StartGame: 0
 --- !u!4 &445746720
